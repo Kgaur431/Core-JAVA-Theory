@@ -7,7 +7,8 @@ This repository explains OOP concepts with code examples in a **simple & symbol-
 - OOPS means Object-Oriented Programming
 - Here Object means real word entity like Car,Bike,ATM etc.
 - Procedural Progamming VS OOPS
-- ![Image1]()
+
+![img1.png](.idea/Images/img1.png)
 
 ## Object And Classes
 **Object has 2 things:**
@@ -32,19 +33,19 @@ This repository explains OOP concepts with code examples in a **simple & symbol-
 - class name first letter is always capital.
 
 #### Syntex:
-                class Demo {
-                            //Properties --All the data variables are known as Properties    
-                            //Behaviour -- This is Known as data Method
-                            }
+               class Demo {
+                //Properties --All the data variables are known as Properties    
+                //Behaviour -- This is Known as data Method
+                }
 
 #### Example
-               class Student{
+               class Student {
                 //Properties
-                  String name;
-                  int Salary; 
+                String name;
+                int Salary;
                 //Behaviour
-               void updateAddress();            
-                           }
+                void updateAddress();
+               }
 
 
 
@@ -70,30 +71,30 @@ This repository explains OOP concepts with code examples in a **simple & symbol-
   - Increase sercurity and confiedntiality
 
 ##### Example:
-              // Interface
-          interface Vehicle {
+                // Interface
+        interface Vehicle {
           void start(); // Abstract method
-          void stop();  // Abstract method
-             }
-
-         // Class implementing the interface
-         class Car implements Vehicle {
-         @Override
-        public void start() {
-        System.out.println("Car is starting...");
+          void stop(); // Abstract method
         }
 
-         @Override
-         public void stop() {
-        System.out.println("Car is stopping...");
-            }
+        // Class implementing the interface
+        class Car implements Vehicle {
+          @Override
+          public void start() {
+            System.out.println("Car is starting...");
+          }
+
+          @Override
+          public void stop() {
+            System.out.println("Car is stopping...");
+          }
         }
 
-         public class Main {
-         public static void main(String[] args) {
-        Vehicle myCar = new Car(); // Interface reference
-        myCar.start(); // Calls the Car's implementation
-        myCar.stop();  // Calls the Car's implementation
+        public class Main {
+          public static void main(String[] args) {
+            Vehicle myCar = new Car(); // Interface reference
+            myCar.start(); // Calls the Car's implementation
+            myCar.stop(); // Calls the Car's implementation
           }
         }
 
@@ -111,49 +112,49 @@ This repository explains OOP concepts with code examples in a **simple & symbol-
 
 ##### Example:
         // Class with encapsulation
-     public class Student {
+    public class Student {
     // Private variables (data hiding)
     private String name;
-     private int age;
+    private int age;
 
-    // Getter method for 'name'
-    public String getName() {
-        return name;
-    }
-
-    // Setter method for 'name'
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    // Getter method for 'age'
-    public int getAge() {
-        return age;
-    }
-
-    // Setter method for 'age'
-    public void setAge(int age) {
-        if (age > 0) { // Validation for secure data manipulation
-            this.age = age;
-        } else {
-            System.out.println("Age must be positive!");
-        }
+     // Getter method for 'name'
+     public String getName() {
+       return name;
      }
-}
 
-     // Main class to test encapsulation
-     public class Main {
-     public static void main(String[] args) {
-     Student student = new Student();
+     // Setter method for 'name'
+     public void setName(String name) {
+       this.name = name;
+     }
 
-        // Setting values using setter methods
-        student.setName("Rahul");
-        student.setAge(20);
+     // Getter method for 'age'
+     public int getAge() {
+       return age;
+     }
 
-        // Accessing values using getter methods
-        System.out.println("Name: " + student.getName());
-        System.out.println("Age: " + student.getAge());
+     // Setter method for 'age'
+     public void setAge(int age) {
+       if (age > 0) { // Validation for secure data manipulation
+         this.age = age;
+       } else {
+         System.out.println("Age must be positive!");
        }
+     }
+    }
+
+        // Main class to test encapsulation
+        public class Main {
+        public static void main(String[] args) {
+        Student student = new Student();
+
+       // Setting values using setter methods
+       student.setName("Rahul");
+       student.setAge(20);
+
+       // Accessing values using getter methods
+       System.out.println("Name: " + student.getName());
+       System.out.println("Age: " + student.getAge());
+     }
     }
 
 
@@ -167,43 +168,44 @@ This repository explains OOP concepts with code examples in a **simple & symbol-
   - Hiearchical
   - Multiple Inheritance -through interface can reslove the diamond problem
 
-![](https://www.tutorialspoint.com/java/images/types_of_inheritance.jpg)
+
+![img2.png](.idea/Images/img2.png)
 
 #### Advantages Of inheritance 
 - Code reusability
 - we can achieve Polymorphism using inheritance
 ##### Syntex:
-    class Parent {
-    // Parent class fields and methods
-    }
-
-    class Child extends Parent {
-    // Child class fields and methods
-    }
+       class Parent {
+        // Parent class fields and methods
+        }
+        
+        class Child extends Parent {
+        // Child class fields and methods
+        }
 
 
 ##### Example:
-    // Parent class
-    class Animal {
-    void eat() {
-    System.out.println("This animal eats food.");
-    }
-    }
-
-    // Child class
-    class Dog extends Animal {
-    void bark() {
-    System.out.println("The dog barks.");
-    }
-    }
-
-    public class Main {
-    public static void main(String[] args) {
-    Dog dog = new Dog();
-    dog.eat();  // Inherited method
-    dog.bark(); // Child class method
-    }
-    }
+            // Parent class
+            class Animal {
+              void eat() {
+                    System.out.println("This animal eats food.");
+              }
+            }
+            
+            // Child class
+            class Dog extends Animal {
+              void bark() {
+                 System.out.println("The dog barks.");
+              }
+            }
+            
+            public class Main {
+             public static void main(String[] args) {
+                Dog dog = new Dog();
+                dog.eat(); // Inherited method
+                dog.bark(); // Child class method
+               }
+            }
 
 ### POLYMORPHISM
 - Poly means **Many** and Morphism means **Form**
@@ -216,35 +218,36 @@ This repository explains OOP concepts with code examples in a **simple & symbol-
       - Compile Time/Static Polymorphism /Method Overloading
       - Run Time / Dynamic Polymorphism / Method Overriding 
 
-![](https://tse1.mm.bing.net/th/id/OIP.LOUWx_ZDo9-WB7z-_ifLzAHaFf?r=0&rs=1&pid=ImgDetMain&o=7&rm=3)
+
+![img3.png](.idea/Images/img3.png)
 
 **Compile Time/Static Polymorphism /Method Overloading : In A Class Method name is same but with different Parameters**
 ##### Example:
-       class Calculator {
-        // Method with one parameter
-        int add(int a) {
-        return a + 10;
-        }
-
-            // Method with two parameters
-            int add(int a, int b) {
-                return a + b;
-            }
+                      class Calculator {
+                        // Method with one parameter
+                        int add(int a) {
+                        return a + 10;
+                        }
         
-            // Method with different parameter types
-            double add(double a, double b) {
-                return a + b;
-            }
-        }
+                    // Method with two parameters
+                      int add(int a, int b) {
+                        return a + b;
+                       }
+                
+                    // Method with different parameter types
+                    double add(double a, double b) {
+                         return a + b;
+                          }
+                    }
         
-        public class Main {
-        public static void main(String[] args) {
-        Calculator calc = new Calculator();
-        System.out.println(calc.add(5));          // Calls method with one int parameter
-        System.out.println(calc.add(5, 10));     // Calls method with two int parameters
-        System.out.println(calc.add(5.5, 4.5));  // Calls method with two double parameters
-          }
-       }
+                public class Main {
+                public static void main(String[] args) {
+                Calculator calc = new Calculator();
+                System.out.println(calc.add(5));          // Calls method with one int parameter
+                System.out.println(calc.add(5, 10));     // Calls method with two int parameters
+                System.out.println(calc.add(5.5, 4.5));  // Calls method with two double parameters
+                  }
+               }
 
 
 **Run Time / Dynamic Polymorphism / Method Overriding : Different Class with same method and same parameters**
@@ -322,19 +325,20 @@ it is something that is abstract and its implementation is independent of choosi
 
 **Difference Between JVM,JRE,JDK**
 
-![](https://th.bing.com/th/id/R.f28367e87c5c5859ab0ac814b76ee4d3?rik=wfI9EaapiJXbUQ&riu=http%3a%2f%2fwww.startertutorials.com%2fcorejava%2fwp-content%2fuploads%2f2015%2f12%2fjvm_jre_jdk.jpg&ehk=OlTfNBiAk6JpWTzymwEaC5QcPMLNSlQ9XgjrwAuOVyU%3d&risl=&pid=ImgRaw&r=0)
-
+![img4.png](.idea/Images/img4.png)
  
 
 ## How to download the JDK
 - Step 1: Visit the Official Website 
   -Go to the https://www.oracle.com/java/technologies/downloads/  to download the file
-![](https://media.geeksforgeeks.org/wp-content/uploads/20250129125050962442/jdk.webp)
+
+![img5.png](.idea/Images/img5.png)
 
 - Step 2: Select the Appropriate Version
   - As of 2025, the latest stable versions are JDK 23 (SE) and JDK 21 (LTS). Select the compatible version as per your operating system (Windows, Mac or Linux)
-![](https://media.geeksforgeeks.org/wp-content/uploads/20250129131532207755/jdk-3.webp)
-  
+
+  ![img6.png](.idea/Images/img6.png)
+- 
 - Step 3: License and Agreement
   - Go through all the License and Agreement before downloading (from Oracle website), it will not ask if you'll download it from OpenJDK website.
   ### Install JDK on Windows
@@ -343,33 +347,39 @@ Follow the below steps to install JDK on Windows environment i.e.Windows 7, Wind
 #### Step 1: Run the Java Development Kit (JDK) Installer
 Locate the downloaded .exe file (e.g. jdk-23-windows-x64_bin.exe) and make the double click to begin the Installation process. Follow the installation wizard prompts to complete the installation process.
 
-![](https://media.geeksforgeeks.org/wp-content/uploads/20250129133758767709/jdk-win1.webp)
+![img7.png](.idea/Images/img7.png)
 
 #### Step 2: Setup the Environment Variables
 Once the installation gets completed, you need to configure environment variables to notify the system about the directory in which the JDK files are located.
 
 Proceed to C:\Program Files\Java\jdk-{YOUR_JDK_VERSION}\bin (replace {-} with your JDK version)
 
-![](https://media.geeksforgeeks.org/wp-content/uploads/20220622115447/Step2LocatingJDKFile.png)
+![img8.png](.idea/Images/img8.png)
+
 ##### Step 2.1: To set the Environment Variables, you need to search Environment Variables in the Task Bar and click on “Edit the system environment variables”.
-![](https://media.geeksforgeeks.org/wp-content/uploads/20220622115655/Step2ConfiguringEnvironmentVariables.png)
+
+![img9.png](.idea/Images/img9.png)
 
 ##### Step 2.2: Under the Advanced section, Click on "Environment Variables".
-![](https://media.geeksforgeeks.org/wp-content/uploads/20220622115847/Step2SettingEnvironmentVariable.png)
+
+![img10.png](.idea/Images/img10.png)
 
 ##### Step 2.3: Under System variables, select the "Path" variable and click on "Edit". Click on "New" then paste the Path Address i.e. C:\Program Files\Java\jdk-{YOUR_JDK_VERSION}\bin. Click on "OK".
-![](https://media.geeksforgeeks.org/wp-content/uploads/20220622120027/Step2SettingPathEnvironmentVariable.png)
+
+![img11.png](.idea/Images/img11.png)
 
 ##### Step 2.4: Now, in the Environment Variables dialogue, under System variables, click on "New" and then under Variable name: JAVA_HOME and Variable value: paste address i.e.
 
 C:\Program Files\Java\jdk-{YOUR_JDK_VERSION}. Click on OK => OK => OK.
-![](https://media.geeksforgeeks.org/wp-content/uploads/20220622120141/Step2SettingJAVAHOMEEnvironmentVariable.png)
+
+![img12.png](.idea/Images/img12.png)
 
 #### Step 3: Check the Java Version
 Open Command Prompt and enter the following commands:
 - java -version
 - javac -version
-![](https://media.geeksforgeeks.org/wp-content/uploads/20220622120248/Step3CheckingJDKVersion.png)
+
+![img13.png](.idea/Images/img13.png)
 
 ### JSE(Java Standard Edition)
 - JSE, also known as Core Java, this is the most basic and standard version of Java. It’s the purest form of Java, a basic foundation for all other editions. It consists of a wide variety of general purpose API’s (like java.lang, java.util) as well as many special purpose APIs.
@@ -527,8 +537,9 @@ This example demonstrates the use of instance variables, which are declared with
 Widening conversion takes place when two data types are automatically converted. This happens when:
 - The two data types are compatible.
   - When we assign a value of a smaller data type to a bigger data type.
-  ![](https://media.geeksforgeeks.org/wp-content/uploads/Widening-or-Automatic-Type-Conversion.png)
-   
+
+![img14.png](.idea/Images/img14.png)
+
     - Example:
 
            // Main class
@@ -649,12 +660,12 @@ But if we store that result in any smaller data type it generates a compile-time
 7. double
 8. boolean
 
-![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105122725/Primitive-Data-Types-in-Java-4.jpg)
 
+![img15.png](.idea/Images/img15.png)
 ### Reference Type 
-- Classes
-- Interfaces
-- Array
-- String
-- Enum
+- Classes 
+- Interfaces 
+- Array 
+- String 
+- Enum 
 
