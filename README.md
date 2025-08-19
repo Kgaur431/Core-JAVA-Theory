@@ -524,7 +524,91 @@ This example demonstrates the use of instance variables, which are declared with
     }
 
 ### Static Variable
+- In Java, when a variable is declared with the static keyword. Then, a single variable is created and shared among all the objects at the class level. Static variables are, essentially, global variables. All instances of the class share the same static variable.
+- Storing constant values or default values that can be used across different instances.
+- The Static variable is used to store the data of class instances. To record the number of times a class instance is created.
 
+  - Example:
+ 
+         class Deedbee
+        {
+         // static variable
+            static int a = m1();
+
+         // static block
+         static
+         {
+             System.out.println("Inside static block");
+         }
+    
+         // static method
+         static int m1()
+         {
+             System.out.println("from m1");
+             return 20;
+         }
+    
+         // static method(main)
+         public static void main(String[] args)
+         {
+             System.out.println("Value of a : " + a);
+             System.out.println("from main");
+         }
+        }
+
+### Method Parameters
+Parameters are variables defined in the method declaration after the method name, inside the parentheses. 
+This includes primitive types such as int, float, boolean, etc, and non-primitive or object types such as an array, String, etc.
+You can pass values(Argument) to the method parameters, at the method call. 
+The method call has the same number of arguments and is in the same order, as the parameters.
+
+- Example:
+  import java.io.*;
+
+                class deedbee {
+                public static void main(String[] args) {
+                // call method pass value to the parameter
+                // return value store in a str
+                String str = example("deedbee");
+                System.out.println(str);
+                }
+
+                  // para is a parameter of type String inside 
+                  // method name method return String
+                  public static String example(String para) {
+                    return "Hello " + para;
+                    }
+                }
+
+### Constructor Parameters
+- A constructor that has parameters is known as parameterized constructor. 
+- If we want to initialize fields of the class with our own values, then use a parameterized constructor.
+  - Example:
+    
+    
+        import java.io.*;
+        class Deed {
+
+        // data members of the class
+        String name;
+        int id;
+      
+        bee(String name, int id) {
+            this.name = name;
+            this.id = id;
+            }
+        }
+        
+        class deb
+        {
+        public static void main(String[] args)
+        {
+        // This would invoke the parameterized constructor
+        Deed deed1 = new Deed("Sweta", 68);
+        System.out.println("DeedName: " + deed1.name
+        + " and DeedId: " + deed1.id);
+        }
+      }
 
 
 ## Types Of Conversion:
@@ -532,6 +616,7 @@ This example demonstrates the use of instance variables, which are declared with
 - Narrowing /Downcating/Explict Conversion
 - Promotion during expresstion
 - Explicat casting during Expresstion
+- 
 
 ### Widening/Automatic Conversion
 Widening conversion takes place when two data types are automatically converted. This happens when:
@@ -660,12 +745,38 @@ But if we store that result in any smaller data type it generates a compile-time
 7. double
 8. boolean
 
-
 ![img15.png](.idea/Images/img15.png)
-### Reference Type 
-- Classes 
-- Interfaces 
+
+#### How we can store float and double values in memory
+- Float and double are both used to store numbers with decimal points in programming.
+The key difference is their precision and storage size. A float is typically a 32-bit number with a precision of about 7 decimal digits, while a double is a 64-bit number with a precision of about 15 decimal digits. Thus, double can store larger numbers and provide more accurate calculations than float.
+
+![img16.png](.idea/Images/img16.png)
+
+### Reference Type
+- Classes
+
+In Java, classes and objects are basic concepts of Object Oriented Programming (OOPs) that are used to represent real-world concepts and entities.
+
+- Interfaces
+  - An Interface in Java programming language is defined as an abstract type used to specify the behaviour of a class. An interface in Java is a blueprint of a behaviour. A Java interface contains static constants and abstract methods.
+  
 - Array 
+    - In Java, an array is an important linear data structure that allows us to store multiple values of the same type.
+    - Arrays in Java are objects, like all other objects in Java, arrays implicitly inherit from the java.lang.Object class. This allows you to invoke methods defined in Object (such as toString(), equals() and hashCode()).
+    - Arrays have a built-in length property, which provides the number of elements in the array 
+
 - String 
-- Enum 
+  - The String class in Java is used to create and manipulate sequences of characters. It is one of the most commonly used classes in Java. Objects of the String class are immutable, which means they cannot be changed once created
+  - Immutable:
+    - Immutable means that once a String object is created, its value cannot be changed.
+
+
+- Wrapper Classes :
+  - A Wrapper class in Java is one whose object wraps or contains primitive data types. When we create an object in a wrapper class, it contains a field and in this field, we can store primitive data types. In other words, we can wrap a primitive value into a wrapper class object.
+    1. Autoboxing
+      - The automatic conversion of primitive types to the object of their corresponding wrapper classes is known as autoboxing. For example: conversion of int to Integer, long to Long, double to Double, etc.
+
+    2. Unboxing
+      - It is just the reverse process of autoboxing. Automatically converting an object of a wrapper class to its corresponding primitive type is known as unboxing. For example, conversion of Integer to int, Long to long, Double to double, etc. 
 
