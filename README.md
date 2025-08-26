@@ -120,3 +120,109 @@ Internally it does:
 ![Screenshot 2025-08-26 000255.png](.idea/Images/Screenshot%202025-08-26%20000255.png)
 
 ![Screenshot 2025-08-26 000433.png](.idea/Images/Screenshot%202025-08-26%20000433.png)
+
+
+## Java Thread Pool,ExecutorFramework ExecutorService-Part1
+
+
+Interview Question:
+
+In ThreadPool,Why you have taken corePoolSize as 2,why not 10 or 15 or another number,what's the logic
+
+Generally,the ThreadPool min and max size are depend on various factors like 
+-  CPU Cores
+- Jvm Memory 
+- Task Nature (Cpu Intensive or I/O Intensive)
+- Concurrency Requirement (Want high or medium or low concurrency)
+- Memory Required to process a requst 
+- Throughput etc.
+
+An its an iterative process to update the min and max values based on monitoring.
+
+![img5.png](.idea/Images2/img5.png)
+
+![img6.png](.idea/Images2/img6.png)
+
+![img7.png](.idea/Images2/img7.png)
+
+## What is ThreadPool:
+- It's a collecction of threads (aka Workers),which are available to perfrom the submitted tasks.
+- Once task completed,workr thread get back to Thread Pool and wait for new task to assigned .
+- Means threads can be reused.
+
+![Screenshot 2025-08-26 210513.png](.idea/Images2/Screenshot%202025-08-26%20210513.png)
+
+## What's the Advantage of Thread Pool?
+
+#### Thread Creation time can be saved:
+- When each thread created,space is allocatedd to it(stack,heap,program counter etc..) and this takes time.
+- With thread,this can be avoided by reusing the thread.
+#### Overhead of managing the Thread lifecycle can be removed:
+- Thread has different state like Running,Waiting,terminate etc.And managing thread state includes complexity.
+- Thread pool abstract away this management.
+
+#### Increased the perfformance :
+- More threads means ,more Context Switching time,using control over thread creation,excess context switching can be avoided.
+
+#### In package java.util.concurrent we have available a framework :
+
+![img.png](.idea/Images2/img.png)
+
+ThreadPoolExector:
+- It's helps to create a customizable ThreadPool.
+
+![img2.png](.idea/Images2/img2.png)
+
+- corePoolSize:
+  - Number of threads are initially created and keep in the pool,even if they are idle.
+
+- allowCoreThreadTimeOut:
+  - If this property is set to TRUE(by default its FLASE),idle thread kept Alive till time specified by 'KeepAliveTime'
+
+- KeepAliveTime:
+  - Thread,which are idle get terminated after this time.
+
+- maxPoolSize:
+  - Maximum nubmber of thread allowed in a pool.
+- If no. of thread are == corePoolSize and queue is also full,then new threads are created (till its less than'maxPoolSize').
+
+
+Excess thread,will remain in pool,this pool is not shutdown or if allowcoreThreadTimeOut is set to true,then excss thread get terminated after remain idle for KeepAliveTime.
+ 
+- TimeUnit:
+  -TimeUnit for the keepAliveTime,whether Millisecond or Second or Hours etc.
+
+- BlockingQueue:
+
+![img3.png](.idea/Images2/img3.png)
+
+
+- ThreadFactory:
+  - Factory for creating new thread.ThreadPoolExecutor use this to create new thread,this Factory provide us an interface to:
+    - To give custom Thread name
+    - To give custom Thread priority 
+    - To set Thread Daemon flag etc.
+
+![img4.png](.idea/Images2/img4.png)
+
+### Running:
+--- 
+Executor is in running state and submit()method will be used to add new task.
+
+### ShutDown :
+---
+  - Executor do not accept new tasks,but continue to process existing tasks,once existing tasks finished,executor moves to terminate state.
+  - Method used shutdown()
+
+### Stop(Forcce shutdown):
+--- 
+- Executor do not accept new tasks.
+- Executor forcefully stops all the tasks which are currently execting.
+- And once fully shutdown,moves to terminate state
+- Method used shutdownNow()
+
+
+
+
+
+
